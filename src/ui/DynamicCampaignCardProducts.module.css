@@ -1,0 +1,78 @@
+.card {
+  display: block;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  width: 315px;
+  height: 430px;
+  background-color: white;
+  margin: 10px;
+  position: absolute;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.profile p {
+  margin-left: 20px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 16pt;
+}
+.explore {
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.imageGrid {
+  display: inline-grid;
+  margin: 12px;
+  margin-top: 15px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 5px;
+  row-gap: 5px;
+  align-items: center;
+  align-content: center;
+}
+
+.imageGridCell {
+  width: 9rem;
+  height: 9rem;
+  background-color: white;
+  border-width: thick;
+  border-color: black;
+}
+
+.item {
+  width: 9rem;
+  height: 9rem;
+  margin: 8px;
+  background-color: transparent;
+  display: inline-grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  row-gap: 3px;
+}
+.imageThumb {
+  width: 6rem;
+  height: 6rem;
+  background-color: transparent;
+  margin-left: 15px;
+}
+
+.itemP {
+  width: 7rem;
+  font-size: 11px;
+  color: black;
+  margin-left: 20px;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+a:link {
+  text-decoration: none;
+}
