@@ -1,6 +1,8 @@
-import classes from "./DynamicCampaignCardProducts.module.css";
+import classes from "./DynamicCampaignCardCategory.module.css";
+import profilePic from "../images/profile.PNG";
+import DynamicCampaignCard from "../ui/DynamicCampaignCard";
 
-const DynamicCampaignCardProducts = (props) => {
+const DynamicCampaignCardCategory = (props) => {
   const gridImages = props.images.map((img) => (
     <div className={classes.imageGridCell}>
       <a href={img.link}>
@@ -17,15 +19,16 @@ const DynamicCampaignCardProducts = (props) => {
   ));
 
   return (
-    <div className={classes.card}>
+    <DynamicCampaignCard>
       <div className={classes.profile}>
-        <p>Revamp your home in style</p>
+        <img src={profilePic} alt="profile" />
+        <p>Hi, Aarna</p>
       </div>
 
+      <div className={classes.topLinks}>Top Links for You</div>
       <div className={classes.imageGrid}>{gridImages}</div>
-      <div className={classes.explore}>Explore All...</div>
-    </div>
+    </DynamicCampaignCard>
   );
 };
 
-export default DynamicCampaignCardProducts;
+export default DynamicCampaignCardCategory;

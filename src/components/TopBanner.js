@@ -1,5 +1,7 @@
 import classes from "./TopBanner.module.css";
 import { bannerImagesSample } from "../store/sampledata";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const TopBanner = () => {
   const imagesBanner = bannerImagesSample.map((image) => (
@@ -9,10 +11,14 @@ const TopBanner = () => {
     <div className={classes.bannerbox}>
       <div>{imagesBanner}</div>
       <div className={`${classes.navigatebox} ${classes.positionleft}`}>
-        <div className={classes.navigatebtn}>&larr;</div>
+        <div className={classes.navigatebtn}>
+          <ArrowBackIosIcon style={{ color: "white", fontSize: "35pt" }} />
+        </div>
       </div>
       <div className={`${classes.navigatebox} ${classes.positionright}`}>
-        <div className={classes.navigatebtn}>&rarr;</div>
+        <div className={classes.navigatebtn}>
+          <ArrowForwardIosIcon style={{ color: "white", fontSize: "35pt" }} />
+        </div>
       </div>
     </div>
   );

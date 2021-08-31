@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  width: 180px;
+}
+
+.hello {
+  height: 1px;
+  margin-left: 1px;
+  margin-top: 5px;
+  font-size: 8pt;
+  font-weight: bold;
+  color: white;
+}
+
+.address {
+  height: 1px;
+  margin-left: 1px;
+  font-size: 12pt;
+  font-weight: bold;
+  color: white;
+}

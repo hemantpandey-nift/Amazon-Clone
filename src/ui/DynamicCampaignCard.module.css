@@ -1,0 +1,11 @@
+.card {
+  display: block;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  width: 315px;
+  height: 430px;
+  background-color: white;
+  margin: 10px;
+  position: absolute;
+}

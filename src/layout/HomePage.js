@@ -4,12 +4,21 @@ import {
   campaignGrid1ImagesSample,
   campaignGrid2ImagesSample,
 } from "../store/sampledata";
-import DynamicCampaignCardCategory from "../ui/DynamicCampaignCardCategory";
-import DynamicCampaignCardProducts from "../ui/DyamicCampaignCardProducts";
+import DynamicCampaignCardCategory from "../components/DynamicCampaignCardCategory";
+import DynamicCampaignCardProducts from "../components/DyamicCampaignCardProducts";
+import TopNavBar from "../components/TopNavBar";
+import BottomNavBar from "../components/BottomNavBar";
 
 const HomePage = () => {
   return (
     <div className={classes.home}>
+      <div>
+        <TopNavBar />
+      </div>
+      <div>
+        <BottomNavBar />
+      </div>
+
       <div className={classes.topBanner}>
         <TopBanner />
       </div>

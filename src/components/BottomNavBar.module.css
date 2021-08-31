@@ -1,0 +1,46 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.navItem {
+  width: auto;
+  padding: 2px 8px 4px 8px;
+  margin: 5px 0px 5px 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+a {
+  font-size: 10pt;
+  color: white;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  padding: 1px 4px 1px 4px;
+  margin: 4px 0px 3px 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+.movieBar {
+  margin-left: 30px;
+  height: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+.navItem:hover {
+  border-color: white;
+}
+.movieBar:hover {
+  border-color: white;
+}
+.menu:hover {
+  border-color: white;
+}

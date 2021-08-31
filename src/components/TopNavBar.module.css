@@ -1,0 +1,111 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.navItem {
+  height: 44px;
+  margin: 3px;
+  padding: 4px;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.navItem > p {
+  height: 2px;
+}
+
+.navItem:hover {
+  border-color: white;
+}
+.logo {
+  width: 120px;
+  height: 50px;
+}
+
+.searchBar {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 0px;
+
+  width: 580px;
+  height: 40px;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: rgb(255, 115, 0);
+}
+.all {
+  width: 45px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  background-color: rgb(201, 195, 195);
+}
+
+.allText {
+  margin-top: 12px;
+  margin-left: 5px;
+  color: black;
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: center;
+}
+
+.search {
+  width: 480px;
+  height: 32px;
+  font-size: 12pt;
+}
+
+.searchIcon {
+  background-color: rgb(252, 187, 67);
+  width: 45px;
+  height: 40px;
+  color: white;
+}
+
+.flag {
+  margin-top: 20px;
+  margin-left: 8px;
+  margin-right: 1px;
+  height: 17px;
+  width: 25px;
+}
+
+.hello {
+  font-size: 9pt;
+  color: white;
+  margin-top: 5px;
+  height: 3px;
+}
+
+.account {
+  height: 8px;
+  font-size: 12pt;
+  color: white;
+  font-weight: bold;
+  margin-top: 1px;
+}
+
+.cartItems {
+  position: relative;
+  top: 0px;
+  left: 10px;
+  height: 2px;
+  margin-top: 0px;
+  font-size: 16pt;
+  font-weight: bolder;
+  color: white;
+}
+.cart {
+  position: relative;
+  top: 30px;
+  height: 2px;
+  margin-top: 0px;
+  font-size: 10pt;
+  font-weight: bolder;
+  color: white;
+}

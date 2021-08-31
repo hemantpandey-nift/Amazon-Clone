@@ -1,13 +1,13 @@
 .home {
   width: 100%;
-  height: 100rem;
-  background-color: red;
+  height: 80rem;
+  background-color: #d8d8d8;
   position: relative;
 }
 
 .topBanner {
   position: absolute;
-  top: 6rem;
+  top: 108px;
   width: 100%;
 }
 
@@ -16,11 +16,10 @@
   width: 100%;
   position: absolute;
   grid-template-columns: auto auto auto auto;
-  background-color: blue;
+
   top: 22rem;
 }
 
 .block {
   width: 100%;
-  background-color: green;
 }
