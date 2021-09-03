@@ -1,0 +1,21 @@
+.heading {
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.image {
+  width: 290px;
+  height: 290px;
+  margin-left: 13px;
+}
+.footer {
+  font-size: 9pt;
+  margin-left: 12px;
+  color: rgba(5, 157, 184, 0.932);
+}
+
+.footer:hover {
+  color: coral;
+  text-decoration-line: underline;
+}

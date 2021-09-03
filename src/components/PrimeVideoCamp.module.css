@@ -1,0 +1,30 @@
+.card {
+  display: block;
+  width: 650px;
+  height: 430px;
+  background-color: white;
+  margin-left: 15px;
+  position: absolute;
+}
+
+.image {
+  width: 650px;
+  height: 430px;
+}
+.p1 {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  font-size: 16pt;
+  font-weight: bold;
+  color: white;
+}
+
+.p2 {
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  font-size: 10pt;
+  font-weight: bold;
+  color: white;
+}

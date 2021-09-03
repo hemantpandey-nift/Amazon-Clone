@@ -5,7 +5,12 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const TopBanner = () => {
   const imagesBanner = bannerImagesSample.map((image) => (
-    <img className={classes.images} src={image} alt="banner mot found" />
+    <img
+      key={Math.random().toString()}
+      className={classes.images}
+      src={image}
+      alt="banner mot found"
+    />
   ));
   return (
     <div className={classes.bannerbox}>

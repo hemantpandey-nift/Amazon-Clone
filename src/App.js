@@ -1,6 +1,7 @@
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "./layout/HomePage";
+import AddNewProduct from "./components/AddNewProduct";
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       </Route>
       <Route path="/amazonclone">
         <HomePage />
+      </Route>
+      <Route path="/seller">
+        <AddNewProduct />
       </Route>
     </Switch>
   );

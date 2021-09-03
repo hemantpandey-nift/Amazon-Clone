@@ -1,13 +1,22 @@
 import classes from "./HomePage.module.css";
+import TopNavBar from "../components/TopNavBar";
+import BottomNavBar from "../components/BottomNavBar";
 import TopBanner from "../components/TopBanner";
 import {
   campaignGrid1ImagesSample,
   campaignGrid2ImagesSample,
+  campaignGrid3ImagesSample,
+  campaignGrid4ImagesSample,
+  campaignGrid5ImagesSample,
+  campaignGrid6ImagesSample,
+  campaignGrid7ImagesSample,
 } from "../store/sampledata";
-import DynamicCampaignCardCategory from "../components/DynamicCampaignCardCategory";
-import DynamicCampaignCardProducts from "../components/DyamicCampaignCardProducts";
-import TopNavBar from "../components/TopNavBar";
-import BottomNavBar from "../components/BottomNavBar";
+import QuadCardCategory from "../components/QuadCardCategory";
+import QuadCardProducts from "../components/QuadCardProducts";
+import SingleProductCamp from "../components/SingleProductCamp";
+import DoubleProductCamp from "../components/DoublePoductCamp";
+import PrimeVideoCamp from "../components/PrimeVideoCamp";
+import DailyDealsProduct from "../components/DailyDealsProduct";
 
 const HomePage = () => {
   return (
@@ -22,19 +31,33 @@ const HomePage = () => {
       <div className={classes.topBanner}>
         <TopBanner />
       </div>
-      <div className={classes.campaignCardGrid}>
-        <div className={classes.block}>
-          <DynamicCampaignCardCategory images={campaignGrid1ImagesSample} />
+      <div className={classes.campaignCardGridTop}>
+        <div style={{ marginLeft: "15px" }}>
+          <QuadCardCategory images={campaignGrid1ImagesSample} />
         </div>
-        <div className={classes.block}>
-          <DynamicCampaignCardCategory images={campaignGrid1ImagesSample} />
+        <div>
+          <SingleProductCamp images={campaignGrid3ImagesSample} />
         </div>
-        <div className={classes.block}>
-          <DynamicCampaignCardProducts images={campaignGrid2ImagesSample} />
+        <div>
+          <QuadCardProducts images={campaignGrid2ImagesSample} />
         </div>
-        <div className={classes.block}>
-          <DynamicCampaignCardCategory images={campaignGrid1ImagesSample} />
+        <div>
+          <DoubleProductCamp images={campaignGrid4ImagesSample} />
         </div>
+      </div>
+      <div className={classes.campaignCardGridBottom}>
+        <div>
+          <PrimeVideoCamp images={campaignGrid5ImagesSample} />
+        </div>
+        <div>
+          <QuadCardProducts images={campaignGrid6ImagesSample} />
+        </div>
+        <div>
+          <QuadCardProducts images={campaignGrid7ImagesSample} />
+        </div>
+      </div>
+      <div className={classes.dealsBanner}>
+        <DailyDealsProduct />
       </div>
     </div>
   );

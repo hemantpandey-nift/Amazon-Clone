@@ -1,9 +1,9 @@
-import classes from "./DynamicCampaignCardProducts.module.css";
-import DynamicCampaignCard from "../ui/DynamicCampaignCard";
+import classes from "./QuadCardProducts.module.css";
+import CampCard from "../ui/CampCard";
 
-const DynamicCampaignCardProducts = (props) => {
+const QuadCardProducts = (props) => {
   const gridImages = props.images.map((img) => (
-    <div className={classes.imageGridCell}>
+    <div key={Math.random().toString()} className={classes.imageGridCell}>
       <a href={img.link}>
         <div className={classes.item}>
           <img
@@ -18,14 +18,14 @@ const DynamicCampaignCardProducts = (props) => {
   ));
 
   return (
-    <DynamicCampaignCard>
+    <CampCard>
       <div className={classes.profile}>
         <p>Revamp your home in style</p>
       </div>
       <div className={classes.imageGrid}>{gridImages}</div>
-      <div className={classes.explore}>Explore All...</div>
-    </DynamicCampaignCard>
+      <div className={classes.explore}>See More</div>
+    </CampCard>
   );
 };
 
-export default DynamicCampaignCardProducts;
+export default QuadCardProducts;

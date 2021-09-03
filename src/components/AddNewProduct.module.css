@@ -1,0 +1,47 @@
+.form {
+  margin: 60px;
+  width: 50rem;
+  height: auto;
+  padding: 20px;
+  background-color: rgb(241, 237, 237);
+  border-style: solid;
+  border-color: rgb(54, 54, 54);
+  border-radius: 10px;
+  box-shadow: rgb(158, 157, 157);
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  margin: 20px;
+  height: 30px;
+  padding: 10px;
+  background-color: rgb(113, 147, 240);
+  border-style: solid;
+  border-color: rgba(24, 19, 94, 0.795);
+  border-radius: 8px;
+  font-size: 14pt;
+  color: white;
+}
+
+.inputBox > label {
+  width: 200px;
+  font-size: 14pt;
+  font-weight: bold;
+}
+.input {
+  margin-left: 20px;
+  width: 500px;
+  height: 25px;
+  font-size: 12pt;
+}
+
+button {
+  margin-left: 300px;
+  width: 150px;
+  height: 35px;
+  font-size: 14pt;
+  font-weight: bold;
+  color: maroon;
+}

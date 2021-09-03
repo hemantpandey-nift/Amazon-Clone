@@ -17,7 +17,7 @@
 
 .imageGrid {
   display: inline-grid;
-  margin: 12px;
+  margin: 10px;
   margin-top: 15px;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
