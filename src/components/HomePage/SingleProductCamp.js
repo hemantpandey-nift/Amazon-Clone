@@ -1,5 +1,5 @@
 import classes from "./SingleProductCamp.module.css";
-import CampCard from "../ui/CampCard";
+import CampCard from "../../ui/CampCard";
 
 const SingleProductCamp = (props) => {
   return (

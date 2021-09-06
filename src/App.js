@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "./layout/HomePage";
-import AddNewProduct from "./components/AddNewProduct";
+import AddNewProduct from "./components/seller/AddNewProduct";
 
 function App() {
   return (

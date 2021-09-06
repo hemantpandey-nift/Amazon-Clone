@@ -1,6 +1,6 @@
 import classes from "./BottomNavBar.module.css";
-import BottomNavCard from "../ui/BottomNavCard";
-import moviesNav from "../images/moviesNav.PNG";
+import BottomNavCard from "../../ui/BottomNavCard";
+import moviesNav from "../../images/moviesNav.PNG";
 import MenuIcon from "@material-ui/icons/Menu";
 
 const BottomNavBar = () => {

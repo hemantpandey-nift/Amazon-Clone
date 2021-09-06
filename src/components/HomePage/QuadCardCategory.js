@@ -1,13 +1,14 @@
-import classes from "./QuadCardProducts.module.css";
-import CampCard from "../ui/CampCard";
+import classes from "./QuadCardCategory.module.css";
+import profilePic from "../../images/profile.PNG";
+import CampCard from "../../ui/CampCard";
 
-const QuadCardProducts = (props) => {
+const QuadCardCategory = (props) => {
   const gridImages = props.images.map((img) => (
     <div key={Math.random().toString()} className={classes.imageGridCell}>
       <a href={img.link}>
         <div className={classes.item}>
           <img
-            class={classes.imageThumb}
+            className={classes.imageThumb}
             src={img.image}
             alt="dynamic campaign"
           />
@@ -20,12 +21,14 @@ const QuadCardProducts = (props) => {
   return (
     <CampCard>
       <div className={classes.profile}>
-        <p>Revamp your home in style</p>
+        <img src={profilePic} alt="profile" />
+        <p>Hi, Aarna</p>
       </div>
+
+      <div className={classes.topLinks}>Top Links for You</div>
       <div className={classes.imageGrid}>{gridImages}</div>
-      <div className={classes.explore}>See More</div>
     </CampCard>
   );
 };
 
-export default QuadCardProducts;
+export default QuadCardCategory;

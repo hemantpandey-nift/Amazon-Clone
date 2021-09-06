@@ -2,14 +2,19 @@ import yourOrderImage from "../images/yourorders.PNG";
 import mobileImage from "../images/mobile.PNG";
 import fashionImage from "../images/fashion.PNG";
 import groceryImage from "../images/grocery.PNG";
+import banner_img_1 from "../images/banner_img_1.jpg";
+import banner_img_2 from "../images/banner_img_2.jpg";
+import banner_img_3 from "../images/banner_img_3.jpg";
+import banner_img_4 from "../images/banner_img_4.jpg";
+import banner_img_5 from "../images/banner_img_5.jpg";
 
 const link = "/";
 export const bannerImagesSample = [
-  "https://m.media-amazon.com/images/I/61+D6FstYkL._SX3000_.jpg",
-  "https://m.media-amazon.com/images/I/51NDs5NbdFL._SX3000_.jpg",
-  "https://m.media-amazon.com/images/I/61mgRzpOE5L._SX3000_.jpg",
-  "https://m.media-amazon.com/images/I/71i723QTb+L._SX3000_.jpg",
-  "https://m.media-amazon.com/images/I/51l8hik5R4L._SX3000_.jpg",
+  banner_img_1,
+  banner_img_2,
+  banner_img_3,
+  banner_img_4,
+  banner_img_5,
 ];
 
 export const campaignGrid1ImagesSample = [

@@ -1,5 +1,5 @@
 import classes from "./AddNewProduct.module.css";
-import useInputValidation from "../hooks/use-InputValidation";
+import useInputValidation from "../../hooks/use-InputValidation";
 import { useState } from "react";
 
 const AddNewProduct = () => {
@@ -62,6 +62,7 @@ const AddNewProduct = () => {
     }
 
     resetText();
+    resetLink();
     resetImage();
   };
 

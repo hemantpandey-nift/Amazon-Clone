@@ -1,0 +1,23 @@
+.slider {
+  position: absolute;
+  top: 44px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+  overflow: hidden;
+}
+
+.slideContainer {
+  padding: 0px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  /* Only for images that have different size than slide */
+  width: 1365px;
+}

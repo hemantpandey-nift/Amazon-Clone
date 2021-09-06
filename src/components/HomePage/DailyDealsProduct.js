@@ -45,8 +45,8 @@ const DailyDealsProduct = () => {
 
   if (products.length > 0) {
     // const productsn = [products[0], products[1]];
-    content = products.map((prod) => (
-      <div key={prod.key} className={classes.product}>
+    content = products.map((prod, i) => (
+      <div key={`img_${i}`} className={`dealSlide ${classes.product}`}>
         <a href={prod.link}>
           <img src={prod.image} alt="not found" className={classes.image}></img>
         </a>

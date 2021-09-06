@@ -1,9 +1,9 @@
-import TopNavCard from "../ui/TopNavCard";
+import TopNavCard from "../../ui/TopNavCard";
 import classes from "./TopNavBar.module.css";
-import logo from "../images/logo.PNG";
-import AddressNavItem from "../ui/AddressNavItem";
+import logo from "../../images/logo.PNG";
+import AddressNavItem from "../../ui/AddressNavItem";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
-import flag from "../images/flag.PNG";
+import flag from "../../images/flag.PNG";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
