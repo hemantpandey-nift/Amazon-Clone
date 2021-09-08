@@ -1,0 +1,42 @@
+.home {
+  width: 100%;
+  margin-top: 107px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 950px auto;
+}
+
+.grid {
+  margin-left: 40px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+}
+
+.sale {
+  margin: auto;
+}
+
+.button {
+  margin: 10px 10px 20px 10px;
+  padding: 4px 10px 3px 10px;
+  text-align: center;
+  width: 170px;
+  height: 25px;
+  background-color: rgb(241, 241, 8);
+  border-radius: 8px;
+  font-size: 12pt;
+  font-weight: normal;
+  color: black;
+}
+.button:hover {
+  cursor: grab;
+  background-color: rgb(252, 134, 66);
+}

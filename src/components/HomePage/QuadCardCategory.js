@@ -22,7 +22,7 @@ const QuadCardCategory = (props) => {
     <CampCard>
       <div className={classes.profile}>
         <img src={profilePic} alt="profile" />
-        <p>Hi, Aarna</p>
+        <p>Hi, Hemant</p>
       </div>
 
       <div className={classes.topLinks}>Top Links for You</div>

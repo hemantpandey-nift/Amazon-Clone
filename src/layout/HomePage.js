@@ -1,23 +1,19 @@
 import classes from "./HomePage.module.css";
-import TopBanner from "../components/HomePage/TopBanner";
-import DailyDealsProduct from "../components/HomePage/DailyDealsProduct";
-import BannerNavigation from "../components/HomePage/BannerNavigation";
-import DealsNavigation from "../components/HomePage/DealsNavigation";
+import ImageSliderTopBanner from "../ui/ImageSliderTopBanner";
+import ImageSliderDeals from "../ui/ImageSliderDeals";
 import TopLayout from "./TopLayout";
 import CampaignCardGridTop from "../components/HomePage/CampaignCardGridTop";
 import CampaignCardGridBottom from "../components/HomePage/CampaignCardGridBottom";
+import { bannerImagesSample } from "../store/sampledata";
 
 const HomePage = () => {
-  console.log("Home Page");
   return (
     <div className={classes.home}>
       <TopLayout />
       <div>
-        <TopBanner />
+        <ImageSliderTopBanner images={bannerImagesSample} />
       </div>
-      <div>
-        <BannerNavigation />
-      </div>
+
       <div className={classes.campaignCardGridTop}>
         <CampaignCardGridTop />
       </div>
@@ -26,10 +22,7 @@ const HomePage = () => {
         <CampaignCardGridBottom />
       </div>
       <div>
-        <DailyDealsProduct />
-      </div>
-      <div>
-        <DealsNavigation />
+        <ImageSliderDeals />
       </div>
     </div>
   );

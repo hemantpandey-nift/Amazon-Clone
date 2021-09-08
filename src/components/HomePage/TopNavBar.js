@@ -6,15 +6,18 @@ import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import flag from "../../images/flag.PNG";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const TopNavBar = () => {
+  const cartData = useSelector((state) => state.cart.quantity);
   return (
     <TopNavCard>
       <div className={classes.nav}>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in/ref=nav_logo">
+          <Link to="/">
             <img src={logo} alt="logo" className={classes.logo} />
-          </a>
+          </Link>
         </div>
         <div className={classes.navItem}>
           <AddressNavItem />
@@ -54,7 +57,7 @@ const TopNavBar = () => {
           style={{ display: "flex", flexDirection: "row" }}
         >
           <div>
-            <p className={classes.hello}>Hello, Aarna</p>
+            <p className={classes.hello}>Hello, Hemant</p>
             <p className={classes.account}>Account & Lists</p>
           </div>
           <ArrowDropDownIcon
@@ -73,16 +76,17 @@ const TopNavBar = () => {
           className={classes.navItem}
           style={{ display: "flex", flexDirection: "row" }}
         >
-          <div>
-            <p className={classes.cartItems}>0</p>
-            <ShoppingCartOutlinedIcon
-              style={{
-                color: "white",
-                fontSize: "22pt",
-              }}
-            />
-          </div>
-
+          <Link to="/cart">
+            <div>
+              <p className={classes.cartItems}>{cartData}</p>
+              <ShoppingCartOutlinedIcon
+                style={{
+                  color: "white",
+                  fontSize: "22pt",
+                }}
+              />
+            </div>
+          </Link>
           <p className={classes.cart}>Cart</p>
         </div>
       </div>

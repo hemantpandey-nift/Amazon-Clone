@@ -2,6 +2,7 @@ import classes from "./BottomNavBar.module.css";
 import BottomNavCard from "../../ui/BottomNavCard";
 import moviesNav from "../../images/moviesNav.PNG";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
 
 const BottomNavBar = () => {
   return (
@@ -15,44 +16,44 @@ const BottomNavBar = () => {
               fontSize: "20pt",
             }}
           />
-          <a href="https://www.amazon.in" style={{ marginTop: "5px" }}>
+          <Link href="/" style={{ marginTop: "5px" }}>
             All
-          </a>
+          </Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Fresh</a>
+          <Link href="/">Fresh</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Best Sellers</a>
+          <Link href="/">Best Sellers</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Amazon Pay</a>
+          <Link href="/">Amazon Pay</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Mobiles</a>
+          <Link href="/">Mobiles</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Prime</a>
+          <Link href="/">Prime</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Buy Again</a>
+          <Link href="/">Buy Again</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Customer Service</a>
+          <Link href="/">Customer Service</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Electronics</a>
+          <Link href="/">Electronics</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">Gift Cards</a>
+          <Link href="/">Gift Cards</Link>
         </div>
         <div className={classes.navItem}>
-          <a href="https://www.amazon.in">New Releases</a>
+          <Link href="/">New Releases</Link>
         </div>
         <div className={classes.movieBar}>
-          <a href="https://www.amazon.in">
+          <Link href="/">
             <img src={moviesNav} alt="movies" style={{ height: "40px" }} />
-          </a>
+          </Link>
         </div>
       </div>
     </BottomNavCard>

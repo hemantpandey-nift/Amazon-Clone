@@ -13,29 +13,37 @@ const AddNewProduct = () => {
   } = useInputValidation((value) => value.trim() !== "");
 
   const {
-    inputValue: linkValue,
-    inputIsValid: linkIsValid,
-    inputChangeHandler: linkChangeHandler,
-    inputBlurHandler: linkBlurHandler,
-    resetInput: resetLink,
+    inputValue: descriptionValue,
+    inputIsValid: descriptionIsValid,
+    inputChangeHandler: descriptionChangeHandler,
+    inputBlurHandler: descriptionBlurHandler,
+    resetInput: resetDescription,
   } = useInputValidation((value) => value.trim() !== "");
 
   const {
-    inputValue: textValue,
-    inputIsValid: textIsValid,
-    inputChangeHandler: textChangeHandler,
-    inputBlurHandler: textBlurHandler,
-    resetInput: resetText,
+    inputValue: priceValue,
+    inputIsValid: priceIsValid,
+    inputChangeHandler: priceChangeHandler,
+    inputBlurHandler: priceBlurHandler,
+    resetInput: resetPrice,
+  } = useInputValidation((value) => value.trim() !== "");
+
+  const {
+    inputValue: categoryValue,
+    inputIsValid: categoryIsValid,
+    inputChangeHandler: categoryChangeHandler,
+    inputBlurHandler: categoryBlurHandler,
+    resetInput: resetCategory,
   } = useInputValidation((value) => value.trim() !== "");
 
   let formIsValid = false;
-  if (imageIsValid && linkIsValid && textIsValid) {
+  if (imageIsValid && descriptionIsValid && priceIsValid && categoryIsValid) {
     formIsValid = true;
   }
 
   const addDataToDatabase = async (data) => {
     return await fetch(
-      "https://react-learning-582ab-default-rtdb.firebaseio.com/AmazonClone/products.json",
+      "https://react-learning-582ab-default-rtdb.firebaseio.com/AmazonClone/SampleProducts.json",
       {
         method: "POST",
         body: JSON.stringify(data),
@@ -48,8 +56,9 @@ const AddNewProduct = () => {
     event.preventDefault();
     const product = {
       image: imageValue,
-      link: linkValue,
-      text: textValue,
+      description: descriptionValue,
+      price: priceValue,
+      category: categoryValue,
     };
 
     try {
@@ -60,10 +69,10 @@ const AddNewProduct = () => {
     } catch (error) {
       setHasError(true);
     }
-
-    resetText();
-    resetLink();
     resetImage();
+    resetPrice();
+    resetDescription();
+    resetCategory();
   };
 
   return (
@@ -83,27 +92,40 @@ const AddNewProduct = () => {
         </div>
 
         <div className={classes.inputBox}>
-          <label htmlFor="link">Link :</label>
+          <label htmlFor="description">Description :</label>
           <input
             type="text"
-            id="link"
-            onChange={linkChangeHandler}
-            onBlur={linkBlurHandler}
-            value={linkValue}
+            id="description"
+            onChange={descriptionChangeHandler}
+            onBlur={descriptionBlurHandler}
+            value={descriptionValue}
             className={classes.input}
           ></input>
         </div>
         <div className={classes.inputBox}>
-          <label htmlFor="text">Text :</label>
+          <label htmlFor="price">price :</label>
           <input
-            type="text"
-            id="text"
-            onChange={textChangeHandler}
-            onBlur={textBlurHandler}
-            value={textValue}
+            type="price"
+            id="price"
+            onChange={priceChangeHandler}
+            onBlur={priceBlurHandler}
+            value={priceValue}
             className={classes.input}
           ></input>
         </div>
+
+        <div className={classes.inputBox}>
+          <label htmlFor="category">Category :</label>
+          <input
+            type="category"
+            id="category"
+            onChange={categoryChangeHandler}
+            onBlur={categoryBlurHandler}
+            value={categoryValue}
+            className={classes.input}
+          ></input>
+        </div>
+
         {hasError && (
           <p style={{ marginLeft: "310px", color: "red" }}>
             Unable to Add Data

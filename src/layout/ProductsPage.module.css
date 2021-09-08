@@ -1,0 +1,22 @@
+.home {
+  width: 100%;
+  margin-top: 107px;
+  height: 100rem;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 300px auto;
+}
+
+.side {
+  width: auto;
+  border-right: solid;
+  border-right-color: rgb(88, 88, 88);
+  display: flex;
+  flex-direction: column;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

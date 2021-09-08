@@ -1,12 +1,13 @@
 import TopNavBar from "../components/HomePage/TopNavBar";
 import BottomNavBar from "../components/HomePage/BottomNavBar";
-import { Fragment } from "react";
+import classes from "./TopLayout.module.css";
+
 const TopLayout = () => {
   return (
-    <Fragment>
+    <div className={classes.main}>
       <TopNavBar />
       <BottomNavBar />
-    </Fragment>
+    </div>
   );
 };
 

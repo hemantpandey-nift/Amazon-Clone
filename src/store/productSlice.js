@@ -1,18 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const products = [{ image: "image", link: "link", text: "text" }];
-
 const initialProductState = { products: [] };
-
 const productSlice = createSlice({
-  name: "product",
+  name: "products",
   initialState: initialProductState,
   reducers: {
-    replaceProducts(state, action) {
-      state.products = action.payload.products;
+    loadproducts(state, action) {
+      state.products = [...action.payload];
     },
   },
 });
 
-export default productSlice.reducer;
 export const productActions = productSlice.actions;
+export default productSlice.reducer;
