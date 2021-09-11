@@ -33,7 +33,6 @@ const ImageSliderDeals = (props) => {
       setProducts(productsList);
     });
   }, [fetchItem]);
-  console.log(products);
 
   const maxImages = products.length;
   if (maxImages > 0) {

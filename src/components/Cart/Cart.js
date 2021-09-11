@@ -7,9 +7,14 @@ import CartItem from "./CartItem";
 
 function Cart() {
   let itemsAvailableCart = false;
+  let cartList;
   const cartData = useSelector((state) => state.cart.cartItems);
-  if (cartData.length > 0) itemsAvailableCart = true;
-  const cartList = cartData.map((item) => <CartItem product={item} />);
+  if (cartData) {
+    if (cartData.length > 0) {
+      itemsAvailableCart = true;
+      cartList = cartData.map((item) => <CartItem product={item} />);
+    }
+  }
 
   return (
     <Fragment>

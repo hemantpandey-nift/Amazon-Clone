@@ -71,8 +71,13 @@ export const fetchCartData = () => {
     };
     try {
       const cartData = await fetchData();
-      console.log(cartData);
-      dispatch(cartActions.replaceCart(cartData));
+
+      dispatch(
+        cartActions.replaceCart({
+          cartItems: cartData.cartItems || [],
+          quantity: cartData.quantity,
+        })
+      );
       dispatch(
         uiActions.showNotification({
           status: "success",

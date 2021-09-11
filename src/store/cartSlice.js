@@ -22,6 +22,7 @@ const cartSlice = createSlice({
       state.changed = true;
       state.quantity = state.quantity + action.payload.quantity;
 
+      console.log(state.cartItems);
       const itemInCartIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );

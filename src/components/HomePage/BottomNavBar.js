@@ -16,42 +16,42 @@ const BottomNavBar = () => {
               fontSize: "20pt",
             }}
           />
-          <Link href="/" style={{ marginTop: "5px" }}>
+          <Link to="/" style={{ marginTop: "5px" }}>
             All
           </Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Fresh</Link>
+          <Link to="/">Fresh</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Best Sellers</Link>
+          <Link to="/">Best Sellers</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Amazon Pay</Link>
+          <Link to="/">Amazon Pay</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Mobiles</Link>
+          <Link to="/">Mobiles</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Prime</Link>
+          <Link to="/">Prime</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Buy Again</Link>
+          <Link to="/">Buy Again</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Customer Service</Link>
+          <Link to="/">Customer Service</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Electronics</Link>
+          <Link to="/">Electronics</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">Gift Cards</Link>
+          <Link to="/">Gift Cards</Link>
         </div>
         <div className={classes.navItem}>
-          <Link href="/">New Releases</Link>
+          <Link to="/">New Releases</Link>
         </div>
         <div className={classes.movieBar}>
-          <Link href="/">
+          <Link to="/">
             <img src={moviesNav} alt="movies" style={{ height: "40px" }} />
           </Link>
         </div>
