@@ -1,44 +1,43 @@
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import classes from "./ImageSliderDeals.module.css";
-import { useState, useEffect } from "react";
-import useFetchItem from "../hooks/use-fetchItems";
+import { useState, useEffect, useCallback } from "react";
+import useHttp from "../hooks/use-http";
 import { Link } from "react-router-dom";
-const productsList = [];
 
-const ImageSliderDeals = (props) => {
-  const url =
-    "https://react-learning-582ab-default-rtdb.firebaseio.com/AmazonClone/products.json";
+const url =
+  "https://react-learning-582ab-default-rtdb.firebaseio.com/AmazonClone/products.json";
+
+const ImageSliderDeals = () => {
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [firstImage, setFirstImage] = useState(0);
   const images = [];
-  const fetchItem = useFetchItem();
+
+  const applydata = useCallback((data) => {
+    const loadedProducts = [];
+    for (const key in data) {
+      loadedProducts.push({
+        id: key,
+        image: data[key].image,
+        category: data[key].category,
+        link: data[key].link,
+        text: data[key].text,
+      });
+    }
+    setProducts(loadedProducts);
+  }, []);
+
+  const { isLoading, error, sendRequest: fetchData } = useHttp(applydata);
 
   useEffect(() => {
-    setIsLoading(true);
-    fetchItem(url).then((data) => {
-      setIsLoading(false);
-      setError(data.loadingError);
-      let product = data.fetchedData;
-      for (const key in product) {
-        productsList.push({
-          key: key,
-          category: product[key].category,
-          image: product[key].image,
-          text: product[key].text,
-        });
-      }
-      setProducts(productsList);
-    });
-  }, [fetchItem]);
+    fetchData({ url: url });
+  }, [fetchData]);
 
   const maxImages = products.length;
   if (maxImages > 0) {
     for (let i = firstImage; i <= firstImage + 4; i++) {
       images.push(
-        <div key={products[i].key} className={classes.product}>
+        <div key={products[i].id} className={classes.product}>
           <Link to={`products/category/${products[i].category}`}>
             <img
               src={products[i].image}

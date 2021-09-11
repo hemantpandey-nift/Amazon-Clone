@@ -12,7 +12,9 @@ function Cart() {
   if (cartData) {
     if (cartData.length > 0) {
       itemsAvailableCart = true;
-      cartList = cartData.map((item) => <CartItem product={item} />);
+      cartList = cartData.map((item) => (
+        <CartItem key={item.id} product={item} />
+      ));
     }
   }
 

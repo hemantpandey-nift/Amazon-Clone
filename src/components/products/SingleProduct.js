@@ -1,51 +1,53 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect, Fragment } from "react";
-import useFetchItem from "../../hooks/use-fetchItems";
+import { useState, useEffect, Fragment, useCallback } from "react";
+
 import classes from "./SingleProduct.module.css";
 import TopLayout from "../../layout/TopLayout";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cartSlice";
 import { Link } from "react-router-dom";
+import useHttp from "../../hooks/use-http";
+
+const url =
+  "https://react-learning-582ab-default-rtdb.firebaseio.com/AmazonClone/SampleProducts.json";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
   const dispatch = useDispatch();
   const params = useParams();
   const productId = params.productId;
 
-  const fetchItem = useFetchItem();
-  const url =
-    "https://react-learning-582ab-default-rtdb.firebaseio.com/AmazonClone/SampleProducts.json";
+  const applydata = useCallback(
+    (data) => {
+      const loadedProducts = [];
+      for (const key in data) {
+        loadedProducts.push({
+          id: key,
+          image: data[key].image,
+          description: data[key].description,
+          price: data[key].price,
+          quantity: 1,
+        });
+      }
+      const selectedProduct = loadedProducts.filter(
+        (prod) => prod.id === productId
+      );
+      console.log(selectedProduct);
+      setProduct(selectedProduct);
+    },
+    [productId]
+  );
+
+  const { isLoading, error, sendRequest: fetchData } = useHttp(applydata);
 
   useEffect(() => {
-    setIsLoading(true);
-    fetchItem(url).then((data) => {
-      setError(data.loadingError);
-      setIsLoading(false);
-      const products = data.fetchedData;
-      const selectedProduct = [];
-      for (const key in products) {
-        if (productId === key) {
-          selectedProduct.push({
-            id: key,
-            image: products[key].image,
-            description: products[key].description,
-            price: products[key].price,
-            quantity: 1,
-          });
-        }
-      }
-      setProduct(selectedProduct);
-    });
-  }, [fetchItem, productId]);
+    fetchData({ url: url });
+  }, [fetchData]);
 
   const productItem = product[0];
   let productToRender;
 
   const addProductToCartHandler = () => {
-    console.log("clicked 1");
     dispatch(cartActions.addProductToCart(productItem));
   };
 
@@ -76,7 +78,7 @@ const SingleProduct = () => {
       <div className={classes.home}>
         <div className={classes.product}>
           <div style={{ margin: "auto" }}>Image List</div>
-          {isLoading && <p>Loading....</p>}
+          {isLoading && <p>Loading ....</p>}
           {error && <p>{error}</p>}
           {productToRender}
           <div className={classes.sale}>
