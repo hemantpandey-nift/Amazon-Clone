@@ -4,6 +4,7 @@ import HomePage from "./layout/HomePage";
 import AddNewProduct from "./components/seller/AddNewProduct";
 import ProductsPage from "./layout/ProductsPage";
 import SingleProduct from "./components/products/SingleProduct";
+import AuthPage from "./layout/AuthPage";
 import Cart from "./components/Cart/Cart";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -48,6 +49,9 @@ function App() {
       </Route>
       <Route path="/cart">
         <Cart />
+      </Route>
+      <Route path="/login">
+        <AuthPage />
       </Route>
     </Switch>
   );

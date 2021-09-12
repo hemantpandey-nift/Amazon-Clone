@@ -6,11 +6,27 @@ import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import flag from "../../images/flag.PNG";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { authActions } from "../../store/authSlice";
+import { useHistory } from "react-router";
+import { cartActions } from "../../store/cartSlice";
+import { sendCartData } from "../../store/cart-Actions";
 
 const TopNavBar = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const cartData = useSelector((state) => state.cart.quantity);
+  const loginData = useSelector((state) => state.auth.token);
+
+  const signOutHandler = () => {
+    const newCartData = { cartItems: [], quantity: 0 };
+    dispatch(authActions.logout(newCartData));
+    dispatch(cartActions.replaceCart(newCartData));
+    dispatch(sendCartData(newCartData));
+    history.replace("/");
+  };
+
   return (
     <TopNavCard>
       <div className={classes.nav}>
@@ -56,10 +72,26 @@ const TopNavBar = () => {
           className={classes.navItem}
           style={{ display: "flex", flexDirection: "row" }}
         >
-          <div>
-            <p className={classes.hello}>Hello, Hemant</p>
-            <p className={classes.account}>Account & Lists</p>
+          <div className={classes.dropdown}>
+            <Link to={loginData ? "/" : "/login"}>
+              <div>
+                <p className={classes.hello}>
+                  {loginData ? "Hello, Hemant" : "Hello, Guest"}
+                </p>
+                <p className={classes.account}>Account & Lists</p>
+              </div>{" "}
+            </Link>
+            <div className={classes.dropdownContent}>
+              <div className={classes.dropdownHeading}>Your Account</div>
+              <p>Your Account</p>
+              <p>Your Orders</p>
+              <p>Your WishList</p>
+              <p>Your Recommendations</p>
+              <p>Switch Account</p>
+              <p onClick={signOutHandler}>Sign Out</p>
+            </div>
           </div>
+
           <ArrowDropDownIcon
             style={{ marginTop: "28px", color: "grey", fontSize: "14pt" }}
           />
