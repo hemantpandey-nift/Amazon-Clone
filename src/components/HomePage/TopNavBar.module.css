@@ -152,3 +152,20 @@
   color: black;
   margin-left: 16px;
 }
+
+.button {
+  margin: 10px 10px 20px 10px;
+  padding: 4px 10px 3px 10px;
+  text-align: center;
+  width: 170px;
+  height: 25px;
+  background-color: rgb(241, 241, 8);
+  border-radius: 8px;
+  font-size: 12pt;
+  font-weight: normal;
+  color: black;
+}
+.button:hover {
+  cursor: grab;
+  background-color: rgb(252, 134, 66);
+}

@@ -17,11 +17,11 @@ const TopNavBar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const cartData = useSelector((state) => state.cart.quantity);
-  const loginData = useSelector((state) => state.auth.token);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   const signOutHandler = () => {
     const newCartData = { cartItems: [], quantity: 0 };
-    dispatch(authActions.logout(newCartData));
+    dispatch(authActions.logout());
     dispatch(cartActions.replaceCart(newCartData));
     dispatch(sendCartData(newCartData));
     history.replace("/");
@@ -35,9 +35,11 @@ const TopNavBar = () => {
             <img src={logo} alt="logo" className={classes.logo} />
           </Link>
         </div>
-        <div className={classes.navItem}>
-          <AddressNavItem />
-        </div>
+        <Link to={isLoggedIn ? "/" : "/login"}>
+          <div className={classes.navItem}>
+            <AddressNavItem />
+          </div>
+        </Link>
         <div className={classes.navItem}>
           <div className={classes.searchBar}>
             <div className={classes.all}>
@@ -73,16 +75,23 @@ const TopNavBar = () => {
           style={{ display: "flex", flexDirection: "row" }}
         >
           <div className={classes.dropdown}>
-            <Link to={loginData ? "/" : "/login"}>
+            <Link to={isLoggedIn ? "/" : "/login"}>
               <div>
                 <p className={classes.hello}>
-                  {loginData ? "Hello, Hemant" : "Hello, Guest"}
+                  {isLoggedIn ? "Hello, Hemant" : "Hello, Guest"}
                 </p>
                 <p className={classes.account}>Account & Lists</p>
               </div>{" "}
             </Link>
             <div className={classes.dropdownContent}>
-              <div className={classes.dropdownHeading}>Your Account</div>
+              {!isLoggedIn && (
+                <Link to="/login">
+                  <div className={classes.button}>Sign In</div>
+                </Link>
+              )}
+              {isLoggedIn && (
+                <div className={classes.dropdownHeading}>Your Account</div>
+              )}
               <p>Your Account</p>
               <p>Your Orders</p>
               <p>Your WishList</p>

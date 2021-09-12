@@ -15,6 +15,7 @@ let isInitial = true;
 function App() {
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   useEffect(() => {
     dispatch(fetchCartData());
@@ -50,9 +51,11 @@ function App() {
       <Route path="/cart">
         <Cart />
       </Route>
-      <Route path="/login">
-        <AuthPage />
-      </Route>
+      {!isLoggedIn && (
+        <Route path="/login">
+          <AuthPage />
+        </Route>
+      )}
     </Switch>
   );
 }

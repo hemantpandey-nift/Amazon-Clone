@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { token: null, expirationTime: "" };
+const initialState = { token: null, isLoggedIn: false, expirationTime: "" };
 const authSlice = createSlice({
   name: "Authentication",
   initialState: initialState,
@@ -8,9 +8,11 @@ const authSlice = createSlice({
     login(state, action) {
       state.token = action.payload.token;
       state.expirationTime = action.payload.expirationTime;
+      state.isLoggedIn = true;
     },
     logout(state) {
       state.token = null;
+      state.isLoggedIn = false;
       state.expirationTime = "";
     },
   },

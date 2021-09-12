@@ -4,7 +4,7 @@ import CampCard from "../../ui/CampCard";
 import { useSelector } from "react-redux";
 
 const QuadCardCategory = (props) => {
-  const loginData = useSelector((state) => state.auth.token);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   const gridImages = props.images.map((img) => (
     <div key={Math.random().toString()} className={classes.imageGridCell}>
@@ -25,7 +25,7 @@ const QuadCardCategory = (props) => {
     <CampCard>
       <div className={classes.profile}>
         <img src={profilePic} alt="profile" />
-        <p>{loginData ? "Hi, Hemant" : "Hi, Guest"}</p>
+        <p>{isLoggedIn ? "Hi, Hemant" : "Hi, Guest"}</p>
       </div>
 
       <div className={classes.topLinks}>Top Links for You</div>
