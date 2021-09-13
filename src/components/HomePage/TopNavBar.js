@@ -97,7 +97,7 @@ const TopNavBar = () => {
               <p>Your WishList</p>
               <p>Your Recommendations</p>
               <p>Switch Account</p>
-              <p onClick={signOutHandler}>Sign Out</p>
+              {isLoggedIn && <p onClick={signOutHandler}>Sign Out</p>}
             </div>
           </div>
 

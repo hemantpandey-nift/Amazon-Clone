@@ -32,7 +32,7 @@ const SingleProduct = () => {
       const selectedProduct = loadedProducts.filter(
         (prod) => prod.id === productId
       );
-      console.log(selectedProduct);
+
       setProduct(selectedProduct);
     },
     [productId]

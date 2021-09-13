@@ -18,11 +18,9 @@ const cartSlice = createSlice({
       state.cartItems = action.payload.cartItems;
     },
     addProductToCart(state, action) {
-      console.log("clicked 2");
       state.changed = true;
       state.quantity = state.quantity + action.payload.quantity;
 
-      console.log(state.cartItems);
       const itemInCartIndex = state.cartItems.findIndex(
         (item) => item.id === action.payload.id
       );
@@ -40,7 +38,6 @@ const cartSlice = createSlice({
       } else {
         state.cartItems = [...state.cartItems, action.payload];
       }
-      console.log(state.cartItems);
     },
 
     removeProductFromCart(state, action) {

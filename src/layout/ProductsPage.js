@@ -11,7 +11,7 @@ const url =
 const ProductsPage = () => {
   const params = useParams();
   const category = params.category;
-  console.log(category);
+
   const [products, setProducts] = useState([]);
 
   const applydata = useCallback(

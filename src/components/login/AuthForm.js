@@ -61,12 +61,14 @@ const AuthForm = () => {
           const expirationTime = new Date(
             new Date().getTime() + +data.expiresIn * 1000
           );
+          console.log(`login expire ${new Date(expirationTime).getTime()}`);
           dispatch(
             authActions.login({
               token: data.idToken,
               expirationTime: expirationTime.toISOString(),
             })
           );
+
           history.replace("/");
         } else {
           switchAuthModeHandler();
